@@ -4,8 +4,12 @@ import { loginUser } from "../controller/user-controller.js";
 import { addCourse } from "../controller/course-controller.js";
 import { addBuyLesson } from "../controller/buyLesson-controller.js";
 import { getData } from "../controller/course-controller.js";
+import { addTeacher } from "../controller/teacher-controller.js";
+import { loginTeacher } from "../controller/teacher-controller.js";
 const router = express.Router();
 
+router.post("/loginteacher", loginTeacher);
+router.post("/addteacher", addTeacher);
 router.post("/getLessonData", getData);
 router.post("/buylesson", addBuyLesson);
 router.post("/add", addUser);
