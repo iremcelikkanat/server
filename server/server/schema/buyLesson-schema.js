@@ -1,16 +1,13 @@
 import mongoose from "mongoose";
 
-// Ders şema tanımı
-const buyLessonSchema = new mongoose.Schema({
+const buyLessonScheme = new mongoose.Schema({
   lessonName: String,
-  amount: Number,
+  amount: String,
   explanation: String,
   category: String,
   userId: String,
-  // students: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
 
-// Modellerin oluşturulması
-const buyLesson = mongoose.model("buyLesson", buyLessonSchema);
+const BuyLesson = mongoose.model("BuyLesson", buyLessonScheme);
 
-export default buyLesson;
+export default BuyLesson;
