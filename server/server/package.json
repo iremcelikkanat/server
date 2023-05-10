@@ -18,7 +18,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb-autoincrement": "^1.0.1",
     "mongoose": "^7.1.0",
-    "mongoose-auto-increment": "^5.0.1",
     "mongoose-sequence": "^5.3.1",
     "nodemon": "^2.0.22",
     "request": "^2.88.2",

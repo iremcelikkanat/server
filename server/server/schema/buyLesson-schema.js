@@ -1,11 +1,13 @@
 import mongoose from "mongoose";
 
 const buyLessonScheme = new mongoose.Schema({
-  lessonName: String,
-  amount: String,
-  explanation: String,
-  category: String,
+  cardName: String,
+  cardNumber: String,
+  date: String,
+  cvc: String,
   userId: String,
+  lessonName:String , 
+  lessonId:String ,
 });
 
 const BuyLesson = mongoose.model("BuyLesson", buyLessonScheme);
