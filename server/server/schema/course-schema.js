@@ -13,6 +13,7 @@ const courseSchema = new mongoose.Schema(
     amount: Number,
     explanation: String,
     category: String,
+    postImage:String,
     students: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   },
   {
