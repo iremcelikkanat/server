@@ -38,11 +38,11 @@ export const loginTeacher = async (request, response) => {
   //MARK: Sifre haslenmeli
   const loginTeacherInfoPassword = request.body.password;
   const email = request.body.email;
-  const existingUser = await User.findOne({ email }); // kullanici daha once kayit oldumu
+  const existingUser = await Teacher.findOne({ email }); // kullanici daha once kayit oldumu
   if (existingUser) {
     if (existingUser.password === loginTeacherInfoPassword) {
       console.log(existingUser._id);
-      response.status(200).json(existingUser._id);
+      response.status(200).json(existingUser.username);
     } else {
       response.status(400).json(" Hatalı şifre girildi");
     }
