@@ -17,6 +17,10 @@ const courseSchema = new mongoose.Schema(
     hours: Number,
     courseTitle: String,
     description: String,
+    rating: Number,
+    currentRating: Number,
+    teacherName: String,
+    selectedPhoto: String,
   },
   {
     timestamps: true,

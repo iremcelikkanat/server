@@ -16,11 +16,10 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import config from "./config.js";
 import rp from "request-promise";
-import http from "http"
-import {Server} from "socket.io"
+import http from "http";
+import { Server } from "socket.io";
 const app = express();
 const port = 3444;
-
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -116,6 +115,20 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
+  });
+});
+
+io.on("connection", (socket) => {
+  console.log("Yeni bir kullanıcı bağlandı.");
+
+  // Linki tüm taraflara yayınla
+  socket.on("linkGonder", (link) => {
+    console.log("bu", link);
+    io.emit("linkGoster", link);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Kullanıcı bağlantısı kesildi.");
   });
 });
 

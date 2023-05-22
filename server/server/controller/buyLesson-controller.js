@@ -14,11 +14,10 @@ export const buyLesson = async (request, response) => {
   }
 };
 
-
 export const purchasedCourse = async (request, response) => {
   const purchasedCourseList = request.body;
-  console.log(purchasedCourseList)
+  console.log(purchasedCourseList);
   const getDatas = await BuyLesson.find(purchasedCourseList); // Verileri getirmek için Course sınıfının find() metodunu kullanın
   response.status(200).json(getDatas); // Verileri yanıt olarak gönderin
-    console.log(getDatas);
+  console.log(getDatas);
 };

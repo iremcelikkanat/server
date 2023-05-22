@@ -24,3 +24,23 @@ export const getData = async (request, response) => {
     console.log(error);
   }
 };
+
+export const updateRating = async (request, response) => {
+  try {
+    const courseInfoID = request.body;
+    const courseInfo = request.body;
+    console.log(courseInfoID.ratingData._id);
+    console.log(courseInfoID);
+    const updatedData = await Course.findOneAndUpdate(
+      { _id: courseInfoID.ratingData._id }, // Güncellenecek dersin kimliğini belirtin
+      { $set: { rating: courseInfo.objectRating.rating } }, // Güncellenen değeri belirtin
+      { new: true } // Güncellenmiş veriyi döndürmek için new: true kullanın
+    );
+
+    response.status(200).json(updatedData);
+  } catch (error) {
+    response
+      .status(500)
+      .json({ message: "Rating güncellenirken bir hata oluştu" });
+  }
+};
