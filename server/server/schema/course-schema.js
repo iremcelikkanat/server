@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
+import Comment from './comment-schema.js';
+
 /*
 id 1:Mat
 id 2:türk
 id 3:fen
 
 */
+
+
+
 // Ders şema tanımı
 const courseSchema = new mongoose.Schema(
   {
@@ -21,16 +26,22 @@ const courseSchema = new mongoose.Schema(
     currentRating: Number,
     teacherName: String,
     selectedPhoto: String,
+    comments: [Comment.schema],
   },
   {
     timestamps: true,
   }
 );
 
+
 // Modellerin oluşturulması
 const Course = mongoose.model("Course", courseSchema);
 
 export default Course;
+
+
+
+
 
 // import mongoose from "mongoose";
 // /*

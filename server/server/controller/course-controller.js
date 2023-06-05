@@ -1,5 +1,4 @@
 import Course from "../schema/course-schema.js";
-
 export const addCourse = async (request, response) => {
   const courseInfo = request.body;
   console.log(courseInfo);
