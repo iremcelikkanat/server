@@ -6,8 +6,15 @@ const buyLessonScheme = new mongoose.Schema({
   date: String,
   cvc: String,
   userId: String,
-  lessonName:String , 
-  lessonId:String ,
+  lessonName: String,
+  lessonId: String,
+  rating: Number,
+  amount: Number,
+  category: String,
+  teacherName: String,
+  courseTitle: String,
+  description: String,
+  explanation: String,
 });
 
 const BuyLesson = mongoose.model("BuyLesson", buyLessonScheme);
